@@ -1,0 +1,153 @@
+rename:
+  data_config: config/data.yaml
+  dataset: pets
+
+rename_medmnist:
+  data_config: config/data.yaml
+  dataset: medmnist
+
+rename_bloodmnist:
+  data_config: config/data.yaml
+  dataset: bloodmnist
+
+rename_pathmnist:
+  data_config: config/data.yaml
+  dataset: pathmnist
+
+rename_pcam:
+  data_config: config/data.yaml
+  dataset: pcam
+
+rename_flowers:
+  data_config: config/data.yaml
+  dataset: flowers
+
+rename_organamnist:
+  data_config: config/data.yaml
+  dataset: organamnist
+
+rename_flowers102:
+  data_config: config/data.yaml
+  dataset: flowers102
+
+rename_organ3d:
+  data_config: config/data.yaml
+  dataset: organ3d
+
+cluster_pets_rn50_cluster10:
+  data_config: config/data.yaml
+  dataset: pets
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  num_clusters: 10
+
+  output_dir: output/cluster
+
+
+cluster_medmnist_rn50_cluster3:
+  data_config: config/data.yaml
+  dataset: medmnist
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  num_clusters: 3
+
+  output_dir: output/cluster
+
+cluster_bloodmnist_rn50_cluster3:
+  data_config: config/data.yaml
+  dataset: bloodmnist
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  num_clusters: 3
+
+  output_dir: output/cluster
+
+cluster_pathmnist_rn50_cluster3:
+  data_config: config/data.yaml
+  dataset: pathmnist
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  num_clusters: 3
+
+  output_dir: output/cluster
+
+cluster_pcam_rn50_cluster3:
+  data_config: config/data.yaml
+  dataset: pcam
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  num_clusters: 3
+
+  output_dir: output/cluster
+
+cluster_flowers_rn50_cluster3:
+  data_config: config/data.yaml
+  dataset: flowers
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  num_clusters: 3
+
+  output_dir: output/cluster
+
+cluster_organamnist_rn50_cluster3:
+  data_config: config/data.yaml
+  dataset: organamnist
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  num_clusters: 3
+
+  output_dir: output/cluster
+
+cluster_flowers102_rn50_cluster5:
+  data_config: config/data.yaml
+  dataset: flowers102
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  num_clusters: 5
+
+  output_dir: output/cluster
+
+cluster_organ3d_rn50_cluster5:
+  data_config: config/data.yaml
+  dataset: organ3d
+
+  model: RN50_3d
+  checkpoint: checkpoints/resnet_50.pth
+  normalize: gray
+  num_classes: 11
+
+  num_clusters: 5
+
+  output_dir: output/cluster

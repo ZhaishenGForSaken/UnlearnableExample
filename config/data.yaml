@@ -1,0 +1,44 @@
+pets:
+  num_classes: 37
+  train: 'data/datasets/classification/pets/train'
+  test: 'data/datasets/classification/pets/test'
+
+medmnist:
+  num_classes: 6
+  train: 'data/datasets/classification/medicMnist/train'
+  test: 'data/datasets/classification/medicMnist/test'
+
+bloodmnist:
+  num_classes: 5
+  train: 'data/datasets/classification/bloodMnist/train'
+  test: 'data/datasets/classification/bloodMnist/test'
+
+pathmnist:
+  num_classes: 9
+  train: 'data/datasets/classification/pathMnist/train'
+  test: 'data/datasets/classification/pathMnist/test'
+
+pcam:
+  num_classes: 2
+  train: 'data/datasets/classification/pcam/train'
+  test: 'data/datasets/classification/pcam/test'
+
+flowers:
+  num_classes: 20
+  train: 'data/datasets/classification/flowers/flowers/train'
+  test: 'data/datasets/classification/flowers/flowers/test'
+
+organamnist:
+  num_classes: 11
+  train: 'data/datasets/classification/organamnist/train'
+  test: 'data/datasets/classification/organamnist/test'
+
+flowers102:
+  num_classes: 102
+  train: 'data/datasets/classification/flowers102/train'
+  test: 'data/datasets/classification/flowers102/test'
+
+organ3d:
+  num_classes: 11
+  train: 'data/datasets/classification/organmnist3d_numpy/train'
+  test: 'data/datasets/classification/organmnist3d_numpy/test'
