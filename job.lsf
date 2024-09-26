@@ -1,34 +1,11 @@
 #!/bin/bash
-# Begin LSF directives
-#BSUB -P stf011
-#BSUB -J test
-#BSUB -o tst.o%J
-#BSUB -W 00:15
-#BSUB -nnodes 32
-#BSUB -alloc_flags "nvme smt4"
-# End LSF directives and begin shell commands
+#BSUB -P LRN062
+#BSUB -W 02:00
+#BSUB -nnodes 128
+#BSUB -J python
+#BSUB -o python.%J.out
+#BSUB -e python.%J.err
 
-NODES=$(cat ${LSB_DJOB_HOSTFILE} | sort | uniq | grep -v login | grep -v batch | wc -l)
-module load ibm-wml-ce
-export OMP_NUM_THREADS=1
-export NCCL_DEBUG=INFO
-
-for BACKEND in 'ddl' 'nccl' 'mpi' 'horovod'
-do 
-  CMD="python -u pytorch_synthetic_benchmark.py --backend $BACKEND"
-  if [ "$BACKEND" == "ddl" ]; then
-    ddlrun $CMD > logs/log.${BACKEND}${NODES}
-  else
-    if [ "$BACKEND" == "nccl" ]; then 
-      SMPIARGS="--smpiargs "off""
-    elif [ "$BACKEND" == "mpi" ]; then 
-      SMPIARGS="--smpiargs "-gpu""
-    else
-      SMPIARGS=""
-      #export HOROVOD_LOG_LEVEL=INFO
-      export PYTHONPATH=$(pwd)/lib/python3.6/site-packages:$PYTHONPATH
-    fi
-    jsrun -n${NODES} -a6 -c42 -g6 -r1 $SMPIARGS --bind=proportional-packed:7 --launch_distribution=packed ./launch.sh "$CMD"  > logs/log.${BACKEND}${NODES} 
-  fi
-done 
-
+module load miniforge3/24.3.0-0
+source activate /gpfs/alpine2/lrn062/proj-shared/zhuy/opence
+jsrun -n1 -r1 -a1 -c1 -g1 python3 g_net.py --config config/stage_1.yaml -e uc_pets_rn50 --stage 1
