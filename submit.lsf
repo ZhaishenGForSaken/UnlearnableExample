@@ -1,12 +1,19 @@
 #!/bin/bash
 #BSUB -P LRN062
-#BSUB -W 00:30
+#BSUB -W 02:00
 #BSUB -nnodes 4
 #BSUB -J python
-#BSUB -o python.%J.out
+#BSUB -o unleanable_node8_batch512.%J.out
 #BSUB -e python.%J.err
+#BSUB -alloc_flags "nvme smt4"
 #BSUB -q debug
-
+module unload x1
 module load miniforge3/24.3.0-0
-source activate /gpfs/alpine2/lrn062/proj-shared/zhuy/opence
-jsrun -n1 -r1 -a1 -c1 -g1 python3 main.py --config config/stage_1.yaml -e uc_pets_rn50 --stage 1
+# source activate /gpfs/alpine2/lrn062/proj-shared/zhuy/opence
+module load open-ce/1.10.0-py311-ibm
+conda activate /gpfs/alpine2/lrn062/proj-shared/zhuy/opence_311
+export OMP_NUM_THREAD=1
+export TORCH_DISTRIBUTED_DEBUG=INFO
+NODES=$(cat ${LSB_DJOB_HOSTFILE} | sort | uniq | grep -v login | grep -v bath | wc -1)
+jsrun -n4 -r1 -a6 -c42 -g6 $SMPIARGS --bind packed:7 python3 -W ignore -u main.py --config config/stage_1.yaml -e uc_pets_rn50_1024 --stage 1
+jsrun -n4 -r1 -a6 -c42 -g6 $SMPIARGS --bind packed:7 python3 -W ignore -u main.py --config config/stage_2.yaml -e uc_pets_rn50_rn18_1024 --stage 2
