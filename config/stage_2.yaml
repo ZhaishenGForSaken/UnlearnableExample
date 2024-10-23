@@ -1,9 +1,45 @@
 
-uc_pets_rn50_rn18:
+uc_pets_rn50_rn18_32:
   data_config: config/data.yaml
   dataset: pets
-  perturbation_dir: output/uc_pets_rn50/perturbation
-  ae_dir: output/uc_pets_rn50/ae
+  perturbation_dir: output/uc_pets_rn50_32/perturbation
+  ae_dir: output/uc_pets_rn50_32/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img # 'img' or 'noise', img: resize images to fit noise; noise: interpolate noise to fit images
+
+  lr: 0.1
+  num_epoch: 120
+  batch_size: 512
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_32/rn18
+
+uc_pets_rn50_rn18_64:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_64/perturbation
+  ae_dir: output/uc_pets_rn50_64/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img # 'img' or 'noise', img: resize images to fit noise; noise: interpolate noise to fit images
+
+  lr: 0.1
+  num_epoch: 120
+  batch_size: 512
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_64/rn18
+
+uc_pets_rn50_rn18_128:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_128/perturbation
+  ae_dir: output/uc_pets_rn50_128/ae
 
   model: RN18
   normalize: general
@@ -14,14 +50,67 @@ uc_pets_rn50_rn18:
   num_epoch: 90
   batch_size: 512
 
-  cluster: output/cluster/pets_rn50_cluster5.pth
-  output_dir: output/uc_pets_rn50/rn18
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_128/rn18
 
+uc_pets_rn50_rn18_256:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_256/perturbation
+  ae_dir: output/uc_pets_rn50_256/ae
 
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img # 'img' or 'noise', img: resize images to fit noise; noise: interpolate noise to fit images
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_256/rn18
+
+uc_pets_rn50_rn18_512:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_512/perturbation
+  ae_dir: output/uc_pets_rn50_512/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img # 'img' or 'noise', img: resize images to fit noise; noise: interpolate noise to fit images
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_512/rn18
+
+uc_pets_rn50_rn18_1024:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_1024/perturbation
+  ae_dir: output/uc_pets_rn50_1024/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img # 'img' or 'noise', img: resize images to fit noise; noise: interpolate noise to fit images
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_1024/rn18
+  
 uc_medMnist_rn50_rn18:
   data_config: config/data.yaml
   dataset: medmnist
-  perturbation_dir: output/uc_medMnist111111111111111111111·_rn50/perturbation
+  perturbation_dir: output/uc_medMnist_rn50/perturbation
   ae_dir: output/uc_medMnist_rn50/ae
 
   model: RN18
@@ -36,11 +125,11 @@ uc_medMnist_rn50_rn18:
   cluster: output/cluster/medMnist_rn50_cluster3.pth
   output_dir: output/uc_medMnist_rn50/perturbation
 
-uc_bloodmnist_rn50_rn18:
+uc_bloodmnist_rn50_rn18_32:
   data_config: config/data.yaml
   dataset: bloodmnist
-  perturbation_dir: output/uc_bloodmnist_rn50/perturbation
-  ae_dir: output/uc_bloodmnist_rn50/ae
+  perturbation_dir: output/uc_bloodmnist_rn50_32/perturbation
+  ae_dir: output/uc_bloodmnist_rn50_32/ae
 
   model: RN18
   normalize: general
@@ -52,13 +141,86 @@ uc_bloodmnist_rn50_rn18:
   batch_size: 512
 
   cluster: output/cluster/bloodmnist_rn50_cluster3.pth
-  output_dir: output/uc_bloodmnist_rn50/perturbation
+  output_dir: output/uc_bloodmnist_rn50_32/perturbation
 
-uc_pathmnist_rn50_rn18:
+uc_bloodmnist_rn50_rn18_64:
+  data_config: config/data.yaml
+  dataset: bloodmnist
+  perturbation_dir: output/uc_bloodmnist_rn50_64/perturbation
+  ae_dir: output/uc_bloodmnist_rn50_64/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/bloodmnist_rn50_cluster3.pth
+  output_dir: output/uc_bloodmnist_rn50_64/perturbation
+
+uc_bloodmnist_rn50_rn18_128:
+  data_config: config/data.yaml
+  dataset: bloodmnist
+  perturbation_dir: output/uc_bloodmnist_rn50_128/perturbation
+  ae_dir: output/uc_bloodmnist_rn50_128/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/bloodmnist_rn50_cluster3.pth
+  output_dir: output/uc_bloodmnist_rn50_128/perturbation
+
+uc_bloodmnist_rn50_rn18_256:
+  data_config: config/data.yaml
+  dataset: bloodmnist
+  perturbation_dir: output/uc_bloodmnist_rn50_256/perturbation
+  ae_dir: output/uc_bloodmnist_rn50_256/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/bloodmnist_rn50_cluster3.pth
+  output_dir: output/uc_bloodmnist_rn50_256/perturbation
+
+uc_bloodmnist_rn50_rn18_512:
+  data_config: config/data.yaml
+  dataset: bloodmnist
+  perturbation_dir: output/uc_bloodmnist_rn50_512/perturbation
+  ae_dir: output/uc_bloodmnist_rn50_512/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/bloodmnist_rn50_cluster3.pth
+  output_dir: output/uc_bloodmnist_rn50_512/perturbation
+
+
+uc_pathmnist_rn50_rn18_32:
   data_config: config/data.yaml
   dataset: pathmnist
-  perturbation_dir: output/uc_pathmnist_rn50/perturbation
-  ae_dir: output/uc_pathmnist_rn50/ae
+  perturbation_dir: output/uc_pathmnist_rn50_32/perturbation
+  ae_dir: output/uc_pathmnist_rn50_32/ae
 
   model: RN18
   normalize: general
@@ -70,7 +232,79 @@ uc_pathmnist_rn50_rn18:
   batch_size: 512
 
   cluster: output/cluster/pathmnist_rn50_cluster3.pth
-  output_dir: output/uc_pathmnist_rn50/perturbation
+  output_dir: output/uc_pathmnist_rn50_32/perturbation
+
+uc_pathmnist_rn50_rn18_64:
+  data_config: config/data.yaml
+  dataset: pathmnist
+  perturbation_dir: output/uc_pathmnist_rn50_64/perturbation
+  ae_dir: output/uc_pathmnist_rn50_64/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/pathmnist_rn50_cluster3.pth
+  output_dir: output/uc_pathmnist_rn50_64/perturbation
+
+uc_pathmnist_rn50_rn18_128:
+  data_config: config/data.yaml
+  dataset: pathmnist
+  perturbation_dir: output/uc_pathmnist_rn50_128/perturbation
+  ae_dir: output/uc_pathmnist_rn50_128/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/pathmnist_rn50_cluster3.pth
+  output_dir: output/uc_pathmnist_rn50_128/perturbation
+
+uc_pathmnist_rn50_rn18_256:
+  data_config: config/data.yaml
+  dataset: pathmnist
+  perturbation_dir: output/uc_pathmnist_rn50_256/perturbation
+  ae_dir: output/uc_pathmnist_rn50_256/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/pathmnist_rn50_cluster3.pth
+  output_dir: output/uc_pathmnist_rn50_256/perturbation
+
+uc_pathmnist_rn50_rn18_512:
+  data_config: config/data.yaml
+  dataset: pathmnist
+  perturbation_dir: output/uc_pathmnist_rn50_512/perturbation
+  ae_dir: output/uc_pathmnist_rn50_512/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/pathmnist_rn50_cluster3.pth
+  output_dir: output/uc_pathmnist_rn50_512/perturbation
 
 
 uc_pcammnist_rn50_rn18:
@@ -91,11 +325,11 @@ uc_pcammnist_rn50_rn18:
   cluster: output/cluster/pcam_rn50_cluster3.pth
   output_dir: output/uc_pcam_rn50/perturbation
 
-uc_flowers_rn50_rn18:
+uc_flowers_rn50_rn18_32:
   data_config: config/data.yaml
   dataset: flowers
-  perturbation_dir: output/uc_flowers_rn50/perturbation
-  ae_dir: output/uc_flowers_rn50/ae
+  perturbation_dir: output/uc_flowers_rn50_32/perturbation
+  ae_dir: output/uc_flowers_rn50_32/ae
 
   model: RN18
   normalize: general
@@ -107,13 +341,86 @@ uc_flowers_rn50_rn18:
   batch_size: 512
 
   cluster: output/cluster/flowers_rn50_cluster3.pth
-  output_dir: output/uc_flowers_rn50/perturbation
+  output_dir: output/uc_flowers_rn50_32/perturbation
 
-uc_organamnist_rn50_rn18:
+uc_flowers_rn50_rn18_64:
+  data_config: config/data.yaml
+  dataset: flowers
+  perturbation_dir: output/uc_flowers_rn50_64/perturbation
+  ae_dir: output/uc_flowers_rn50_64/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/flowers_rn50_cluster3.pth
+  output_dir: output/uc_flowers_rn50_64/perturbation
+
+uc_flowers_rn50_rn18_128:
+  data_config: config/data.yaml
+  dataset: flowers
+  perturbation_dir: output/uc_flowers_rn50_128/perturbation
+  ae_dir: output/uc_flowers_rn50_128/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/flowers_rn50_cluster3.pth
+  output_dir: output/uc_flowers_rn50_128/perturbation
+
+uc_flowers_rn50_rn18_256:
+  data_config: config/data.yaml
+  dataset: flowers
+  perturbation_dir: output/uc_flowers_rn50_256/perturbation
+  ae_dir: output/uc_flowers_rn50_256/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/flowers_rn50_cluster3.pth
+  output_dir: output/uc_flowers_rn50_256/perturbation
+
+uc_flowers_rn50_rn18_512:
+  data_config: config/data.yaml
+  dataset: flowers
+  perturbation_dir: output/uc_flowers_rn50_512/perturbation
+  ae_dir: output/uc_flowers_rn50_512/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/flowers_rn50_cluster3.pth
+  output_dir: output/uc_flowers_rn50_512/perturbation
+
+
+uc_organamnist_rn50_rn18_32:
   data_config: config/data.yaml
   dataset: organamnist
-  perturbation_dir: output/uc_organamnist_rn50/perturbation
-  ae_dir: output/uc_organamnist_rn50/ae
+  perturbation_dir: output/uc_organamnist_rn50_32/perturbation
+  ae_dir: output/uc_organamnist_rn50_32/ae
 
   model: RN18_gray
   normalize: gray
@@ -125,13 +432,85 @@ uc_organamnist_rn50_rn18:
   batch_size: 512
 
   cluster: output/cluster/organamnist_rn50_cluster3.pth
-  output_dir: output/uc_organamnist_rn50/perturbation
+  output_dir: output/uc_organamnist_rn50_32/perturbation
 
-uc_flowers102_rn50_rn18:
+uc_organamnist_rn50_rn18_64:
+  data_config: config/data.yaml
+  dataset: organamnist
+  perturbation_dir: output/uc_organamnist_rn50_64/perturbation
+  ae_dir: output/uc_organamnist_rn50_64/ae
+
+  model: RN18_gray
+  normalize: gray
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/organamnist_rn50_cluster3.pth
+  output_dir: output/uc_organamnist_rn50_64/perturbation
+
+uc_organamnist_rn50_rn18_128:
+  data_config: config/data.yaml
+  dataset: organamnist
+  perturbation_dir: output/uc_organamnist_rn50_128/perturbation
+  ae_dir: output/uc_organamnist_rn50_128/ae
+
+  model: RN18_gray
+  normalize: gray
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/organamnist_rn50_cluster3.pth
+  output_dir: output/uc_organamnist_rn50_128/perturbation
+
+uc_organamnist_rn50_rn18_256:
+  data_config: config/data.yaml
+  dataset: organamnist
+  perturbation_dir: output/uc_organamnist_rn50_256/perturbation
+  ae_dir: output/uc_organamnist_rn50_256/ae
+
+  model: RN18_gray
+  normalize: gray
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/organamnist_rn50_cluster3.pth
+  output_dir: output/uc_organamnist_rn50_256/perturbation
+
+uc_organamnist_rn50_rn18_512:
+  data_config: config/data.yaml
+  dataset: organamnist
+  perturbation_dir: output/uc_organamnist_rn50_512/perturbation
+  ae_dir: output/uc_organamnist_rn50_512/ae
+
+  model: RN18_gray
+  normalize: gray
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/organamnist_rn50_cluster3.pth
+  output_dir: output/uc_organamnist_rn50_512/perturbation
+
+uc_flowers102_rn50_rn18_32:
   data_config: config/data.yaml
   dataset: flowers102
-  perturbation_dir: output/uc_flowers102_rn50/perturbation
-  ae_dir: output/uc_flowers102_rn50/ae
+  perturbation_dir: output/uc_flowers102_rn50_32/perturbation
+  ae_dir: output/uc_flowers102_rn50_32/ae
 
   model: RN18
   normalize: general
@@ -143,4 +522,76 @@ uc_flowers102_rn50_rn18:
   batch_size: 512
 
   cluster: output/cluster/flowers102_rn50_cluster5.pth
-  output_dir: output/uc_flowers102_rn50/perturbation
+  output_dir: output/uc_flowers102_rn50_32/perturbation
+
+uc_flowers102_rn50_rn18_64:
+  data_config: config/data.yaml
+  dataset: flowers102
+  perturbation_dir: output/uc_flowers102_rn50_64/perturbation
+  ae_dir: output/uc_flowers102_rn50_64/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/flowers102_rn50_cluster5.pth
+  output_dir: output/uc_flowers102_rn50_64/perturbation
+
+uc_flowers102_rn50_rn18_128:
+  data_config: config/data.yaml
+  dataset: flowers102
+  perturbation_dir: output/uc_flowers102_rn50_128/perturbation
+  ae_dir: output/uc_flowers102_rn50_128/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/flowers102_rn50_cluster5.pth
+  output_dir: output/uc_flowers102_rn50_128/perturbation
+
+uc_flowers102_rn50_rn18_256:
+  data_config: config/data.yaml
+  dataset: flowers102
+  perturbation_dir: output/uc_flowers102_rn50_256/perturbation
+  ae_dir: output/uc_flowers102_rn50_256/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/flowers102_rn50_cluster5.pth
+  output_dir: output/uc_flowers102_rn50_256/perturbation
+
+uc_flowers102_rn50_rn18_512:
+  data_config: config/data.yaml
+  dataset: flowers102
+  perturbation_dir: output/uc_flowers102_rn50_512/perturbation
+  ae_dir: output/uc_flowers102_rn50_512/ae
+
+  model: RN18
+  normalize: general
+  epsilon: 16
+  resize_type: img
+
+  lr: 0.1
+  num_epoch: 90
+  batch_size: 512
+
+  cluster: output/cluster/flowers102_rn50_cluster5.pth
+  output_dir: output/uc_flowers102_rn50_512/perturbation

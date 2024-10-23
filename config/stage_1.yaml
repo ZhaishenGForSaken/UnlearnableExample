@@ -5,6 +5,48 @@ uc_pets_rn50:
   dataset: pets
   perturbation_dir: output/uc_pets_rn50/perturbation
   ae_folder: output/uc_pets_rn50/ae
+  
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 5e-5
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50/perturbation
+  batch_size: 32
+
+uc_pets_rn50_32:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_32/perturbation
+  ae_folder: output/uc_pets_rn50_32/ae
+  
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 5e-5
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_32/perturbation
+  batch_size: 32
+
+uc_pets_rn50_64:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_64/perturbation
+  ae_folder: output/uc_pets_rn50_64/ae
 
   model: RN50
   checkpoint: checkpoints/RN50_imagenet.pth
@@ -18,8 +60,92 @@ uc_pets_rn50:
   norm: linf
 
   cluster: output/cluster/pets_rn50_cluster10.pth
-  output_dir: output/uc_pets_rn50/perturbation
+  output_dir: output/uc_pets_rn50_64/perturbation
+  batch_size: 64
 
+uc_pets_rn50_128:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_128/perturbation
+  ae_folder: output/uc_pets_rn50_128/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_128/perturbation
+  batch_size: 128
+
+uc_pets_rn50_256:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_256/perturbation
+  ae_folder: output/uc_pets_rn50_256/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_256/perturbation
+  batch_size: 256
+
+uc_pets_rn50_512:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_512/perturbation
+  ae_folder: output/uc_pets_rn50_512/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_512/perturbation
+  batch_size: 512
+
+uc_pets_rn50_1024:
+  data_config: config/data.yaml
+  dataset: pets
+  perturbation_dir: output/uc_pets_rn50_1024/perturbation
+  ae_folder: output/uc_pets_rn50_1024/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/pets_rn50_cluster10.pth
+  output_dir: output/uc_pets_rn50_1024/perturbation
+  batch_size: 1024
 
 uc_medmnist_rn50:
   data_config: config/data.yaml
@@ -40,16 +166,17 @@ uc_medmnist_rn50:
 
   cluster: output/cluster/medmnist_rn50_cluster3.pth
   output_dir: output/uc_medmnist_rn50/perturbation
+  batch_size: 32
 
-uc_bloodmnist_rn50:
+uc_bloodmnist_rn50_32:
   data_config: config/data.yaml
   dataset: bloodmnist
-  perturbation_dir: output/uc_bloodmnist_rn50/perturbation
-  ae_folder: output/uc_bloodmnist_rn50/ae
+  perturbation_dir: output/uc_bloodmnist_rn50_32/perturbation
+  ae_folder: output/uc_bloodmnist_rn50_32/ae
 
   model: RN50
   checkpoint: checkpoints/RN50_imagenet.pth
-  normalize: imagenet
+  normalize: gray
   num_classes: 1000
 
   epsilon: 16
@@ -59,17 +186,102 @@ uc_bloodmnist_rn50:
   norm: linf
 
   cluster: output/cluster/bloodmnist_rn50_cluster3.pth
-  output_dir: output/uc_bloodmnist_rn50/perturbation
+  output_dir: output/uc_bloodmnist_rn50_32/perturbation
+  batch_size: 32
 
-uc_pathmnist_rn50:
+uc_bloodmnist_rn50_64:
   data_config: config/data.yaml
-  dataset: pathmnist
-  perturbation_dir: output/uc_pathmnist_rn50/perturbation
-  ae_folder: output/uc_pathmnist_rn50/ae
+  dataset: bloodmnist
+  perturbation_dir: output/uc_bloodmnist_rn50_64/perturbation
+  ae_folder: output/uc_bloodmnist_rn50_64/ae
 
   model: RN50
   checkpoint: checkpoints/RN50_imagenet.pth
-  normalize: imagenet
+  normalize: gray
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 30
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/bloodmnist_rn50_cluster3.pth
+  output_dir: output/uc_bloodmnist_rn50_64/perturbation
+  batch_size: 64
+
+uc_bloodmnist_rn50_128:
+  data_config: config/data.yaml
+  dataset: bloodmnist
+  perturbation_dir: output/uc_bloodmnist_rn50_128/perturbation
+  ae_folder: output/uc_bloodmnist_rn50_128/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: gray
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 30
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/bloodmnist_rn50_cluster3.pth
+  output_dir: output/uc_bloodmnist_rn50_128/perturbation
+  batch_size: 128
+
+uc_bloodmnist_rn50_256:
+  data_config: config/data.yaml
+  dataset: bloodmnist
+  perturbation_dir: output/uc_bloodmnist_rn50_256/perturbation
+  ae_folder: output/uc_bloodmnist_rn50_256/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: gray
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 30
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/bloodmnist_rn50_cluster3.pth
+  output_dir: output/uc_bloodmnist_rn50_256/perturbation
+  batch_size: 256
+
+uc_bloodmnist_rn50_512:
+  data_config: config/data.yaml
+  dataset: bloodmnist
+  perturbation_dir: output/uc_bloodmnist_rn50_512/perturbation
+  ae_folder: output/uc_bloodmnist_rn50_512/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: gray
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 30
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/bloodmnist_rn50_cluster3.pth
+  output_dir: output/uc_bloodmnist_rn50_512/perturbation
+  batch_size: 512
+
+uc_pathmnist_rn50_32:
+  data_config: config/data.yaml
+  dataset: pathmnist
+  perturbation_dir: output/uc_pathmnist_rn50_32/perturbation
+  ae_folder: output/uc_pathmnist_rn50_32/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: gray
   num_classes: 1000
 
   epsilon: 16
@@ -79,7 +291,96 @@ uc_pathmnist_rn50:
   norm: linf
 
   cluster: output/cluster/pathmnist_rn50_cluster3.pth
-  output_dir: output/uc_pathmnist_rn50/perturbation
+  output_dir: output/uc_pathmnist_rn50_32/perturbation
+  batch_size: 32
+
+uc_pathmnist_rn50_64:
+  data_config: config/data.yaml
+  dataset: pathmnist
+  perturbation_dir: output/uc_pathmnist_rn50_64/perturbation
+  ae_folder: output/uc_pathmnist_rn50_64/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: gray
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 30
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/pathmnist_rn50_cluster3.pth
+  output_dir: output/uc_pathmnist_rn50_64/perturbation
+  batch_size: 64
+
+
+uc_pathmnist_rn50_128:
+  data_config: config/data.yaml
+  dataset: pathmnist
+  perturbation_dir: output/uc_pathmnist_rn50_128/perturbation
+  ae_folder: output/uc_pathmnist_rn50_128/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: gray
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 30
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/pathmnist_rn50_cluster3.pth
+  output_dir: output/uc_pathmnist_rn50_128/perturbation
+  batch_size: 128
+
+
+uc_pathmnist_rn50_256:
+  data_config: config/data.yaml
+  dataset: pathmnist
+  perturbation_dir: output/uc_pathmnist_rn50_256/perturbation
+  ae_folder: output/uc_pathmnist_rn50_256/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: gray
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 30
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/pathmnist_rn50_cluster3.pth
+  output_dir: output/uc_pathmnist_rn50_256/perturbation
+  batch_size: 256
+
+
+uc_pathmnist_rn50_512:
+  data_config: config/data.yaml
+  dataset: pathmnist
+  perturbation_dir: output/uc_pathmnist_rn50_512/perturbation
+  ae_folder: output/uc_pathmnist_rn50_512/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: gray
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 30
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/pathmnist_rn50_cluster3.pth
+  output_dir: output/uc_pathmnist_rn50_512/perturbation
+  batch_size: 512
+
 
 uc_pcam_rn50:
   data_config: config/data.yaml
@@ -89,7 +390,7 @@ uc_pcam_rn50:
 
   model: RN50
   checkpoint: checkpoints/RN50_imagenet.pth
-  normalize: imagenet
+  normalize: gray
   num_classes: 1000
 
   epsilon: 16
@@ -101,11 +402,11 @@ uc_pcam_rn50:
   cluster: output/cluster/pcam_rn50_cluster3.pth
   output_dir: output/uc_pcam_rn50/perturbation
 
-uc_flowers_rn50:
+uc_flowers_rn50_32:
   data_config: config/data.yaml
   dataset: flowers
-  perturbation_dir: output/uc_flowers_rn50/perturbation
-  ae_folder: output/uc_flowers_rn50/ae
+  perturbation_dir: output/uc_flowers_rn50_32/perturbation
+  ae_folder: output/uc_flowers_rn50_32/ae
 
   model: RN50
   checkpoint: checkpoints/RN50_imagenet.pth
@@ -119,7 +420,92 @@ uc_flowers_rn50:
   norm: linf
 
   cluster: output/cluster/flowers_rn50_cluster3.pth
-  output_dir: output/uc_flowers_rn50/perturbation
+  output_dir: output/uc_flowers_rn50_32/perturbation
+  batch_size: 32
+
+uc_flowers_rn50_64:
+  data_config: config/data.yaml
+  dataset: flowers
+  perturbation_dir: output/uc_flowers_rn50_64/perturbation
+  ae_folder: output/uc_flowers_rn50_64/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/flowers_rn50_cluster3.pth
+  output_dir: output/uc_flowers_rn50_64/perturbation
+  batch_size: 64
+
+uc_flowers_rn50_128:
+  data_config: config/data.yaml
+  dataset: flowers
+  perturbation_dir: output/uc_flowers_rn50_128/perturbation
+  ae_folder: output/uc_flowers_rn50_128/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/flowers_rn50_cluster3.pth
+  output_dir: output/uc_flowers_rn50_128/perturbation
+  batch_size: 128
+
+uc_flowers_rn50_256:
+  data_config: config/data.yaml
+  dataset: flowers
+  perturbation_dir: output/uc_flowers_rn50_256/perturbation
+  ae_folder: output/uc_flowers_rn50_256/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/flowers_rn50_cluster3.pth
+  output_dir: output/uc_flowers_rn50_256/perturbation
+  batch_size: 256
+
+uc_flowers_rn50_512:
+  data_config: config/data.yaml
+  dataset: flowers
+  perturbation_dir: output/uc_flowers_rn50_512/perturbation
+  ae_folder: output/uc_flowers_rn50_512/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/flowers_rn50_cluster3.pth
+  output_dir: output/uc_flowers_rn50_512/perturbation
+  batch_size: 512
 
 uc_organamnist_rn50:
   data_config: config/data.yaml
@@ -141,11 +527,11 @@ uc_organamnist_rn50:
   cluster: output/cluster/organamnist_rn50_cluster3.pth
   output_dir: output/uc_organamnist_rn50/perturbation
 
-uc_flowers102_rn50:
+uc_flowers102_rn50_32:
   data_config: config/data.yaml
   dataset: flowers102
-  perturbation_dir: output/uc_flowers102_rn50/perturbation
-  ae_folder: output/uc_flowers102_rn50/ae
+  perturbation_dir: output/uc_flowers102_rn50_32/perturbation
+  ae_folder: output/uc_flowers102_rn50_32/ae
 
   model: RN50
   checkpoint: checkpoints/RN50_imagenet.pth
@@ -159,4 +545,90 @@ uc_flowers102_rn50:
   norm: linf
 
   cluster: output/cluster/flowers102_rn50_cluster5.pth
-  output_dir: output/uc_flowers102_rn50/perturbation
+  output_dir: output/uc_flowers102_rn50_32/perturbation
+  batch_size: 32
+
+uc_flowers102_rn50_64:
+  data_config: config/data.yaml
+  dataset: flowers102
+  perturbation_dir: output/uc_flowers102_rn50_64/perturbation
+  ae_folder: output/uc_flowers102_rn50_64/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/flowers102_rn50_cluster5.pth
+  output_dir: output/uc_flowers102_rn50_64/perturbation
+  batch_size: 64
+
+ 
+uc_flowers102_rn50_128:
+  data_config: config/data.yaml
+  dataset: flowers102
+  perturbation_dir: output/uc_flowers102_rn50_128/perturbation
+  ae_folder: output/uc_flowers102_rn50_128/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/flowers102_rn50_cluster5.pth
+  output_dir: output/uc_flowers102_rn50_128/perturbation
+  batch_size: 128
+
+uc_flowers102_rn50_256:
+  data_config: config/data.yaml
+  dataset: flowers102
+  perturbation_dir: output/uc_flowers102_rn50_256/perturbation
+  ae_folder: output/uc_flowers102_rn50_256/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/flowers102_rn50_cluster5.pth
+  output_dir: output/uc_flowers102_rn50_256/perturbation
+  batch_size: 256
+
+uc_flowers102_rn50_512:
+  data_config: config/data.yaml
+  dataset: flowers102
+  perturbation_dir: output/uc_flowers102_rn50_512/perturbation
+  ae_folder: output/uc_flowers102_rn50_512/ae
+
+  model: RN50
+  checkpoint: checkpoints/RN50_imagenet.pth
+  normalize: imagenet
+  num_classes: 1000
+
+  epsilon: 16
+  lr: 1e-4
+  num_epoch: 50
+  target_offset: 1
+  norm: linf
+
+  cluster: output/cluster/flowers102_rn50_cluster5.pth
+  output_dir: output/uc_flowers102_rn50_512/perturbation
+  batch_size: 512
